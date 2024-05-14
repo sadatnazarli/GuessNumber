@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(334deg, #6b97f7, #7525e2, #f7137e);
+    background-size: 180% 180%;
+    animation: gradient-animation 6s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.game {
+    text-align: center;
+    border: 2px solid #eee;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+.game:hover {
+    transform: scale(1.05);
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+.number {
+    font-size: 6rem;
+    margin-top: 30px;
+    background-color: #eee;
+    color: #222;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    transition: background-color 0.5s, transform 0.5s;
+    font-family: 'Press Start 2P', cursive; /* Tetris-like font */
+}
+
+.between {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive; /* Tetris-like font */
+}
+
+.btn {
+    background-color: #60b347;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-family: 'Press Start 2P', cursive; /* Tetris-like font */
+}
+
+.btn:hover {
+    background-color: #45a029;
+    transform: scale(1.05);
+}
+
+.btn.again {
+    background-color: #f44336;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+input.guess {
+    width: 80px;
+    padding: 10px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    text-align: center;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    transition: border-color 0.3s, transform 0.3s;
+    font-family: 'Press Start 2P', cursive; /* Tetris-like font */
+}
+
+input.guess:focus {
+    border-color: #60b347;
+    transform: scale(1.05);
+}
+
+section {
+    margin: 30px 0;
+}
+
+.message {
+    font-size: 1.5rem;
+    margin: 30px 0;
+    transition: color 0.3s;
+    font-family: 'Press Start 2P', cursive; /* Tetris-like font */
+}
+
+.message.correct {
+    color: #60b347;
+}
+
+.message.wrong {
+    color: #f44336;
+}
+
+.score, .highscore {
+    font-size: 1.5rem;
+    color: #ffd700;
+    font-family: 'Press Start 2P', cursive; /* Tetris-like font */
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.left {
+    margin-bottom: 20px;
+}
+
+input.guess, .btn.check {
+    margin-bottom: 10px;
+}
