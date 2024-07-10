@@ -10,7 +10,8 @@ let randomNumber = Math.trunc(Math.random() * 20) + 1;
 let currentScore = 20;
 let highscore = 0;
 
-checkBtn.addEventListener("click", function () {
+
+function check() {
     const guessValue = Number(guess.value);
     if (!guessValue) {
         message.textContent = "No number!";
@@ -53,7 +54,19 @@ checkBtn.addEventListener("click", function () {
             highScore.textContent = highscore;
         }
     }
+
+}
+
+
+checkBtn.addEventListener("click", function () {
+    check();
 });
+
+guess.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        check();
+    }
+})
 
 againBtn.addEventListener("click", function () {
     currentScore = 20;
